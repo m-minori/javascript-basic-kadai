@@ -4,6 +4,7 @@ let typed = '';
 let score  = 0;
 
 
+
 //　必要なHTML要素の取得
 const untypedfield = document.getElementById('untyped');
 const typedfield = document.getElementById('typed');
@@ -57,6 +58,7 @@ const keyPress = e => {
   untyped = untyped.substring(1);
   typedfield.textContent = typed;
   untypedfield.textContent = untyped;
+  document.getElementById('typecount').textContent = score;
 
   //　テキストがなくなったら新しいテキストを表示
   if(untyped === '') {
@@ -64,11 +66,6 @@ const keyPress = e => {
   }
 };
 
-// タイプした文字の数
-document.addEventListener('keypress', e => {
-
-  document.getElementById('typecount').textContent = score + 1;
-});
 
 
 
